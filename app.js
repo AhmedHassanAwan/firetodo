@@ -15,7 +15,7 @@ const div = document.querySelector("#card");
 onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-    //   renderData()
+      renderData()
       console.log(uid);
     
     } else {
