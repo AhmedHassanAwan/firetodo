@@ -15,13 +15,13 @@ const div = document.querySelector("#card");
 onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
-      renderData()
+    //   renderData()
       console.log(uid);
     
     } else {
       window.location = "login.html"
     }
-  });
+  })
 
 btn.addEventListener("click",async(e)=>{
   e.preventDefault()
