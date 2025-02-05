@@ -39,7 +39,7 @@ btn.addEventListener("click",async(e)=>{
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-  renderData()
+//   renderData()
 
 }); // btn 
 
