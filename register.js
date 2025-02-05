@@ -24,6 +24,7 @@ btn.addEventListener("click",()=>{
         // Signed up 
         const user = userCredential.user;
         console.log(user);
+        window.location = "login.html"
         
         // ...
     })

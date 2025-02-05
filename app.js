@@ -2,6 +2,8 @@
 
 import { collection, addDoc , getDocs , Timestamp ,   query,  deleteDoc , doc, updateDoc ,where   } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
 import {auth , db } from "./config.js";
 
 const title = document.querySelector("#title");
@@ -9,8 +11,17 @@ const description = document.querySelector("#description");
 const btn = document.querySelector("#btn");
 const div = document.querySelector("#card");
 
-// const array = []
 
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      renderData()
+      console.log(uid);
+    
+    } else {
+      window.location = "login.html"
+    }
+  });
 
 btn.addEventListener("click",async(e)=>{
   e.preventDefault()
@@ -28,7 +39,7 @@ btn.addEventListener("click",async(e)=>{
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-  renderData()
+//   renderData()
 
 }); // btn 
 
@@ -137,3 +148,4 @@ function editbtn() {
 
   
 }
+
